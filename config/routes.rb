@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  get 'pages/homepage', to: 'pages#homepage', as: 'homepage'
+  get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
+
   resources :devices do
     resources :booking, only: [:new, :create]
   end

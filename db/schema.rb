@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_144618) do
+ActiveRecord::Schema.define(version: 2018_11_12_152942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "device_id"
     t.datetime "start_of_renting"
     t.datetime "end_of_renting"
+    t.bigint "user_id"
+    t.bigint "device_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["device_id"], name: "index_bookings_on_device_id"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2018_11_12_144618) do
 
   create_table "devices", force: :cascade do |t|
     t.string "name"
-    t.string "description"
     t.integer "price_per_week"
+    t.text "description"
     t.string "condition_of_device"
     t.integer "age_of_device"
     t.string "type_of_device"
@@ -40,12 +40,15 @@ ActiveRecord::Schema.define(version: 2018_11_12_144618) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.string "location"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "devices"

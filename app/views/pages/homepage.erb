@@ -1,1 +1,21 @@
-<h1>HOMEPAGE</h1>
+<div class="container">
+  <h1>devici</h1>
+  <a href="#" class="btn-medium">Borrow a Device</a>
+</div>
+
+<div class="container">
+  <h2>About devici:</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<h2>Recently Listed:</h2>
+
+<div class="container">
+  <div class="row">
+    <% @devices.each do |d| %>
+      <div class="col-xs-12 col-sm-3">
+        <%= render "shared/card", device: d %>
+      </div>
+    <% end %>
+  </div>
+</div>

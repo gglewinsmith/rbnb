@@ -1,8 +1,9 @@
 class DevicesController < ApplicationController
-  before_action :find, only: %w[show edit update destroy]
+  before_action :set_device, only: [:show, :edit, :update, :destroy]
 
   def index
     @devices = Device.all
+    @device = Device.new
   end
 
   def show
@@ -38,7 +39,7 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:name, :price_per_week, :description, :condition_of_device, :age_of_device, :type_of_device)
   end
 
-  def find
+  def set_device
     @device = Device.find(params[:id])
   end
 

@@ -20,6 +20,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 gem 'devise'
+gem 'simple_form'
 
 
 group :development, :test do

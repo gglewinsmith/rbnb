@@ -13,8 +13,14 @@ class DevicesController < ApplicationController
   end
 
   def create
-    Device.create(set_params)
-    redirect_to devices_path
+    @user = User.last
+    @device = Device.new(set_params)
+    @device.user = @user
+    if @device.save
+      redirect_to devices_path
+    else
+      render :new
+    end
   end
 
   def edit

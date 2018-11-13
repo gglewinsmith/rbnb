@@ -1,9 +1,16 @@
-<div class="center">
-  <h1>Device</h1>
-<% @devices.each do |device| %>
-  <%= device.name %>
-  <%= device.description %>
-  <% end %>
+<h1>Search for a Device</h1>
 
-  <p class= "btn btn-danger"><%=  link_to "Create a new device.", new_device_path %></p>
+<%= render 'form', device: @device %>
+
+<h1>Search Results</h1>
+
+<div class="container">
+  <div class="row">
+    <% @devices.each do |device| %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= render 'shared/card', device: device %>
+      </div>
+    <% end %>
+  </div>
 </div>
+

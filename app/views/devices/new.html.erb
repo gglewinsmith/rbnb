@@ -2,29 +2,32 @@
   <h1>Loan your device</h1>
   <%= simple_form_for @device do |f| %>
 
-  <% if @device.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @device.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% if @device.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @device.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <%= f.label :name, "Enter name of device" %>
     <%= f.text_field :name %>
     <%= f.label :type_of_device, "What type of advice is this?" %>
     <%= f.text_field :type_of_device %>
-   <%= f.label :description, "Describe your device" %>
+    <%= f.label :description, "Describe your device" %>
     <%= f.text_field :description %>
-   <%= f.label :condition_of_device, "What condition is your device in?" %>
+    <%= f.label :condition_of_device, "What condition is your device in?" %>
     <%= f.text_field :condition_of_device %>
     <%= f.label :age_of_device, "How old is the device?" %>
     <%= f.text_field :age_of_device %>
     <%= f.label :price_per_week, "How much is the device to rent per week?" %>
     <%= f.text_field :price_per_week %>
+    <!-- [...] -->
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <!-- [...] -->
     <%= f.submit %>
-
   <% end %>
 </div>

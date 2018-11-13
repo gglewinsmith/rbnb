@@ -8,6 +8,7 @@ class DevicesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     set_device
   end
 

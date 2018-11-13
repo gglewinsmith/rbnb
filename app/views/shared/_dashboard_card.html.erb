@@ -1,0 +1,11 @@
+<div class="dashboard">
+  <div class="dashboard-name">
+    <h3><%= device.name %></h3>
+  </div>
+  <div class="dashboard-body">
+    <p><%= device.description %></p>
+  </div>
+  <div class="dashboard-link">
+    <%= link_to 'More information on this device', device_path(device) %>
+  </div>
+</div>

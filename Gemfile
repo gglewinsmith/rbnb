@@ -15,7 +15,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary', '~> 1.9.1'
+gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'dotenv-rails', groups: [:development, :test]
 
@@ -24,6 +24,7 @@ group :development do
 end
 gem 'devise'
 gem 'simple_form'
+gem 'flatpickr_rails'
 
 
 group :development, :test do

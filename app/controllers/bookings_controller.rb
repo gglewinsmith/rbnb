@@ -1,23 +1,24 @@
 class BookingsController < ApplicationController
-before_action :find, only: [ :new, :create, :destroy]
+before_action :find, only: [:destroy]
+before_action :authenticate_user!
 
-  def new
-    @device = Device.find(params[:device_id])
-    @booking = Booking.new
+
+  def total_cost
+    stay_length = @booking.end_of_renting - @booking.start_of_renting
+    (@booking.device.price_per_week / 7) * stay_length
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.device = Device.find(params[:device_id])
+    @booking.user = current_user
+    @booking.cost = total_cost
     if @booking.save
-      redirect_to devices_path
-    else
-      render :new
+      redirect_to dashboard_path
     end
   end
 
   def destroy
-
   end
 
   private
@@ -25,5 +26,4 @@ before_action :find, only: [ :new, :create, :destroy]
   def booking_params
     params.require(:booking).permit(:start_of_renting, :end_of_renting, :user_id, :device_id)
   end
-
 end

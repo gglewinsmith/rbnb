@@ -11,7 +11,7 @@
       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Sign Out', destroy_user_session_path %></a>
       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'My Dashboard', dashboard_path %></a>
     <% else %>
-      <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Lend a Device', new_device_path %></a>
+      <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Lend a Device', new_user_registration_path %></a>
       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Sign Up', new_user_registration_path %></a>
       <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Sign In', new_user_session_path %></a>
     <% end %>

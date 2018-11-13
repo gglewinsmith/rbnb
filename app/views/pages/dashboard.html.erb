@@ -1,10 +1,27 @@
 <h1>User Dashboard</h1>
 
-<div class="container">
+<div>
   <h2>Devices you are borrowing:</h2>
-
+  <div class="container">
+    <div class="row">
+      <% @devices.each do |d| %>
+        <div class="col-xs-12 col-sm-3">
+          <%= render "shared/dashboard_card", device: d %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div class="container">
+<div>
   <h2>Devices you are lending:</h2>
+  <div class="container">
+    <div class="row">
+      <% @devices.each do |d| %>
+        <div class="col-xs-12 col-sm-3">
+          <%= render "shared/dashboard_card", device: d %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

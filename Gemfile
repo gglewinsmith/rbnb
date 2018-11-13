@@ -24,6 +24,7 @@ group :development do
 end
 gem 'devise'
 gem 'simple_form'
+gem 'flatpickr_rails'
 
 
 group :development, :test do

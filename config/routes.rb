@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
 
   resources :devices do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :destroy]
   end
 
   root to: 'pages#homepage'

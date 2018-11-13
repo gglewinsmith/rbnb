@@ -7,6 +7,7 @@ class DevicesController < ApplicationController
   end
 
   def show
+    set_device
   end
 
   def new

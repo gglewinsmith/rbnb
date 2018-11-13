@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
 
   def index
-    @devices = Device.all
+    @devices = Device.all.reject { |device| device.user.id == current_user.id }
     @device = Device.new
   end
 
@@ -14,9 +14,8 @@ class DevicesController < ApplicationController
   end
 
   def create
-    @user = User.last
     @device = Device.new(set_params)
-    @device.user = @user
+    @device.user = current_user
     if @device.save
       redirect_to devices_path
     else

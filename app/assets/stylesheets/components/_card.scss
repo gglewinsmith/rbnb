@@ -16,35 +16,26 @@
 }
 .card-category {
   position: absolute;
-  top: 15px;
+  top: 60px;
   left: 10px;
-  font-size: 13px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  bottom: 60px;
   left: 10px;
+  font-size: 13px;
 }
-.card-description h2 {
-  font-size: 24px;
+.card-condition {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  font-size: 13px;
 }
 .card-description p {
   font-size: 12px;
   opacity: 0.7;
   font-weight: lighter;
   color: white;
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
 }

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def homepage
-    @devices = Device.all
+    @devices = Device.all.reject { |device| device.user.id == current_user.id }
   end
 
   def dashboard

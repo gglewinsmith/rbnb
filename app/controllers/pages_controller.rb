@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @devices = Device.all
   end
 end

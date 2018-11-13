@@ -40,7 +40,6 @@ class DevicesController < ApplicationController
 
   private
 
-
   def set_params
     params.require(:device).permit(:name, :price_per_week, :description, :condition_of_device, :age_of_device, :type_of_device, :photo)
   end
@@ -48,5 +47,4 @@ class DevicesController < ApplicationController
   def set_device
     @device = Device.find(params[:id])
   end
-
 end

@@ -4,5 +4,17 @@
 
 <h1>Search Results</h1>
 
-<%= render 'shared/card', device: @device %>
+
+<div class="container">
+  <h1>WHERE?????</h1>
+  <div class="row">
+    <% @devices.each do |device| %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= render 'shared/card', device: device %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="map"></div>
 

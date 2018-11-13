@@ -7,8 +7,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Lend a Device</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign In</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
+
+    <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Lend a Device', new_device_path %></a>
+    <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Sign Up', new_user_registration_path %></a>
+    <a class="navbar-wagon-item navbar-wagon-link"><%= link_to 'Sign In', new_user_session_path %></a>
   </div>
 </div>

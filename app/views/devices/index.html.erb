@@ -1,6 +1,16 @@
+index_page
 <h1>Search for a Device</h1>
 
 <%= render 'form', device: @device %>
 
 <h1>Search Results</h1>
 
+<div class="center">
+  <h1>Device</h1>
+<% @devices.each do |device| %>
+  <%= device.name %>
+  <%= device.description %>
+  <% end %>
+
+  <p class= "btn btn-danger"><%=  link_to "Create a new device.", new_device_path %></p>
+</div>

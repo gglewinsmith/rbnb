@@ -11,6 +11,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @booked_devices = Booking.all.select { |booking| booking.user == current_user}
+    @lent_devices = Booking.all.select { |booking| booking.device.user == current_user}
     @bookings = Booking.all
     @devices_booked = []
     current_user_id = current_user.id

@@ -1,17 +1,17 @@
 <div class="dashboard">
   <div class="dashboard-name">
-    <h3><%= Device.find(device.device_id).name %></h3>
+    <h3><%= booking.device.name %></h3>
   </div>
   <div class="dashboard-body">
-    <p><%= Device.find(device.device_id).description %></p>
+    <p><%= booking.device.description %></p>
   </div>
   <div class="dashboard-body">
-    <p><%= device.start_of_renting %></p>
+    <p><%= booking.start_of_renting %></p>
   </div>
   <div class="dashboard-body">
-    <p><%= device.end_of_renting %></p>
+    <p><%= booking.end_of_renting %></p>
   </div>
   <div class="dashboard-link">
-    <%= link_to 'More information on this device', device_path(device) %>
+    <%= link_to 'More information on this device', device_path(booking.device) %>
   </div>
 </div>

@@ -1,17 +1,18 @@
-<div>
+<div class='form_for'>
   <%= form_for(@device) do |f| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: 'Which device do you need?', class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.text_field :price_per_week, placeholder: 'What price did you have in mind?', class: 'form-control', name: "test" %>
-        </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: 'Which device do you need?', class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :price_per_week, placeholder: 'What price did you have in mind?', class: 'form-control', name: "test" %>
+          </div>
           <%= f.submit "Find device", class: 'btn-medium', id: 'homepage-banner-button' %>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 </div>
+

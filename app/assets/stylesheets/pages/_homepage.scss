@@ -21,11 +21,20 @@
   font-weight: bold;
   margin-top: 80px;
   margin-bottom: 40px;
+  text-align: center;
+  color: #18273C;
+}
+.homepage-content_h1 {
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px rgba(50,103,161,0.4);
+  color: #18273C;
 }
 .homepage-content_p{
   font-size: 14px !important;
+  color: #18273C;
 }
 .padding{
-  padding-left: 100px;
-  padding-right: 100px
+  padding-left: 300px;
+  padding-right: 300px
 }

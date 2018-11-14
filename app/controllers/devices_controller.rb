@@ -3,7 +3,11 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @devices = Device.all.reject { |device| device.user_id == current_user.id }
+    if current_user
+      @devices = Device.all.reject { |device| device.user == current_user }
+    else
+      @devices = Device.all
+    end
     @device = Device.new
   end
 

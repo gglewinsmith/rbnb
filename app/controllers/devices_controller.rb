@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @devices = Device.all
+    @devices = Device.all.reject { |device| device.user.id == current_user.id }
     @device = Device.new
   end
 
@@ -17,8 +17,8 @@ class DevicesController < ApplicationController
   end
 
   def create
-    @user = current_user
     @device = Device.new(set_params)
+    @device.user = current_user
     @device.user_id = @user.id
     if @device.save
       redirect_to devices_path

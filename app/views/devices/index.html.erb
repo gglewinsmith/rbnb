@@ -1,16 +1,24 @@
-<h1>Search for a Device</h1>
-
-<%= render 'shared/form', device: @device %>
-
-<h1>Search Results</h1>
-
-<div class="container">
-  <div class="row">
-    <% @devices.each do |device| %>
-      <div class="col-xs-12 col-sm-4 col-md-6">
-        <%= render 'shared/card', device: device %>
-      </div>
-    <% end %>
+<div class="container" style="background-image: linear-gradient(-100deg, #141e30, #243b55);" id="homepage-banner">
+  <div class="banner-content">
+    <h1>search for a device</h1>
+    <%= render 'shared/form', device: @device %>
   </div>
 </div>
+
+<div class="wrapper">
+  <div class="heading">
+    <h1>results</h1>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <% @devices.each do |device| %>
+        <div class="col-xs-12 col-sm-4 col-md-6">
+          <%= render 'shared/card', device: device %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 

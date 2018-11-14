@@ -18,6 +18,7 @@
 <div id="break">
 </div>
 
+
 <div class="borders">
   <h2 class="dashboard_h2">DEVICES YOU ARE LENDING:</h2>
   <div>
@@ -28,6 +29,19 @@
             <%= render "shared/dashboard_card", booking: b %>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="borders">
+  <h2 class="dashboard_h2">YOUR DEVICES CURRENTLY ON THE MARKET:</h2>
+  <div>
+    <div>
+      <div class="dashboard_h2">
+        <ul><% current_user.devices.each  do |b| %>
+            <li><%= link_to b.name, device_path(b)%></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

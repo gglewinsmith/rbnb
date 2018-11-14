@@ -1,0 +1,39 @@
+<div class="container" style="background-image: linear-gradient(-100deg, #141e30, #243b55);" id="homepage-banner">
+  <div class="banner-content">
+    <h1 style="text-shadow: 2px 2px 3px rgba(255,255,255,0.1)">devici</h1>
+    <br>
+    <p class="btn-medium" id="homepage-banner-button">
+      <%= link_to 'Borrow a Device', devices_path %>
+    </p>
+  </div>
+</div>
+
+<div class="container padding">
+  <h2 class="homepage-content">About devici</h2>
+  <p class="homepage-content_h1">"What is devici?"</p>
+  <p class="homepage-content_p">Put simply, Devici is an online device marketplace - like an Airbnb for laptops, phones and tablets.</p>
+  <br>
+  <p class="homepage-content_h1">"How does devici work?"</p>
+  <p class="homepage-content_p">Prospective renters go online, select the device they wish to rent, and select the dates they wish to rent the device for.</p>
+  <p class="homepage-content_p">Wannabe 'hosts' can register on the site for free, set a price per week for their device and upload pictures of what’s on offer.</p>
+  <br>
+  <p class="homepage-content_h1">"Is it easy to book?"</p>
+  <p class="homepage-content_p">Yes, very. Once you’ve created a profile you can book instantly.</p>
+  <br>
+  <p class="homepage-content_h1">"How successful is devici?"</p>
+  <p class="homepage-content_p">Since it was founded on 12th November 2018 by Angus, George and Kate, devici has grown dramatically, expanding to 190 countries and 34,000 cities. More than 40 million people have rented a device using the site.</p>
+</div>
+
+<div class="container padding">
+  <h2 class="homepage-content">Recently Listed on devici:</h2>
+</div>
+
+  <div class="container" id="homepage-cards">
+    <div class="row">
+      <% @devices.each do |d| %>
+        <div class="col-xs-6 col-sm-4">
+          <%= render "shared/card", device: d %>
+        </div>
+      <% end %>
+    </div>
+  </div>

@@ -1,33 +1,36 @@
-<div class="center">
-  <h1>Loan your device</h1>
-  <%= simple_form_for @device do |f| %>
+  <h1 class="new_header">Loan your device</h1>
+<div class="container">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= simple_form_for @device do |f| %>
 
-    <% if @device.errors.any? %>
-      <div class="errors-container">
-        <ul>
-          <% @device.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+        <% if @device.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @device.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-    <%= f.label :name, "Enter name of device" %>
-    <%= f.input :name %>
-    <%= f.label :type_of_device, "What type of device is this?" %>
-    <%= f.input :type_of_device %>
-    <%= f.label :description, "Describe your device" %>
-    <%= f.input :description %>
-    <%= f.label :condition_of_device, "What condition is your device in?" %>
-    <%= f.input :condition_of_device %>
-    <%= f.label :age_of_device, "How old is the device?" %>
-    <%= f.input :age_of_device %>
-    <%= f.label :price_per_week, "How much is the device to rent per week?" %>
-    <%= f.input :price_per_week %>
-    <!-- [...] -->
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <!-- [...] -->
-    <%= f.submit %>
-  <% end %>
+        <%= f.input :name, label: "Enter name of device", label_html: { class: "form_text" } %>
+        <%= f.label :type_of_device, "What type of device is this?", class:"form_text" %>
+        <%= f.input :type_of_device %>
+        <%= f.label :description, "Describe your device", class:"form_text" %>
+        <%= f.input :description %>
+        <%= f.label :condition_of_device, "What condition is your device in?", class:"form_text" %>
+        <%= f.input :condition_of_device %>
+        <%= f.label :age_of_device, "How old is the device?", class:"form_text" %>
+        <%= f.input :age_of_device %>
+        <%= f.label :price_per_week, "How much is the device to rent per week?", class:"form_text" %>
+        <%= f.input :price_per_week %>
+        <!-- [...] -->
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <!-- [...] -->
+        <%= f.submit %>
+      <% end %>
+
+  </div>
+
 </div>

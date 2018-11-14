@@ -4,7 +4,7 @@
   <%= link_to 'devici', root_path, class: "logo_styling" %>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right">
     <% if user_signed_in? %>
       <%= link_to 'Borrow a Device', devices_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to 'Lend a Device', new_device_path, class: "navbar-wagon-item navbar-wagon-link" %>

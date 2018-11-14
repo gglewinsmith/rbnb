@@ -1,5 +1,6 @@
 class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @devices = Device.all.reject { |device| device.user.id == current_user.id }
@@ -7,6 +8,8 @@ class DevicesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    set_device
   end
 
   def new
@@ -16,6 +19,7 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(set_params)
     @device.user = current_user
+    @device.user_id = @user.id
     if @device.save
       redirect_to devices_path
     else

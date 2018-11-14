@@ -4,16 +4,12 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.text_field :name, placeholder: 'Which device do you need?', class: 'form-control' %>
         </div>
-
         <div class="form-group">
-          <%= f.label :condition_of_device %>
-          <%= f.text_field :condition_of_device, class: 'form-control', name: "test" %>
+          <%= f.text_field :price_per_week, placeholder: 'What price did you have in mind?', class: 'form-control', name: "test" %>
         </div>
-
-        <%= f.submit "Search", class: 'btn btn-primary' %>
+          <%= f.submit "Find device", class: 'btn-medium', id: 'homepage-banner-button' %>
       </div>
     </div>
   </div>

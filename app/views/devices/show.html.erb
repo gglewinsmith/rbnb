@@ -3,25 +3,23 @@
     <h1><%= @device.name %></h1>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div>
-      <h4>Information on Device</h4>
-      <ul>
-        <li><%= @device.type_of_device %></li>
-        <li><%= @device.condition_of_device %></li>
-        <li><%= @device.age_of_device %></li>
-        <li><%= @device.description %></li>
-      </ul>
-    </div>
-    <div class="card-price">
-      <h4>£<%= @device.price_per_week %> per week</h4>
-      <form action="/" method="get">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      </form>
+
+<div class="flexbox">
+  <div class="info-box">
+    <div class="row">
+      <div>
+        <h4>Information on Device</h4>
+        <ul>
+          <li>Type: <%= @device.type_of_device %></li>
+          <li>Condition: <%= @device.condition_of_device %></li>
+          <li>Age: <%= @device.age_of_device %></li>
+          <li>Description: <%= @device.description %></li>
+          <li>Price per week: £<%=@device.price_per_week%></li>
+        </ul>
+      </div>
     </div>
   </div>
+  <div>
+    <%= render '/shared/booking_form', device: @device, booking: @booking %>
+  </div>
 </div>
-
-<h1>Booking this device:</h1>
-<%= render '/shared/booking_form', device: @device, booking: @booking %>

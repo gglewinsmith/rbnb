@@ -1,8 +1,8 @@
 <h1 class="dashboard_header">My Dashboard</h1>
 
 <div class="borders">
-  <h2 class="dashboard_h2">DEVICES YOU ARE BORROWING:</h2>
-  <div>
+  <div class="section_background">
+    <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY BORROWING:</h2>
     <div>
       <div class="dashboard_row">
         <% @booked_devices.each do |b| %>
@@ -15,13 +15,9 @@
   </div>
 </div>
 
-<div id="break">
-</div>
-
-
 <div class="borders">
-  <h2 class="dashboard_h2">DEVICES YOU ARE LENDING:</h2>
-  <div>
+  <div class="section_background">
+    <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY LENDING:</h2>
     <div>
       <div class="dashboard_row">
         <% @lent_devices.each do |b| %>
@@ -33,16 +29,18 @@
     </div>
   </div>
 </div>
+
 <div class="borders">
-  <h2 class="dashboard_h2">YOUR DEVICES CURRENTLY ON THE MARKET:</h2>
-  <div>
-    <div>
-      <div class="dashboard_h2">
-        <ul><% current_user.devices.each  do |b| %>
-            <li><%= link_to b.name, device_path(b)%></li>
-          <% end %>
-        </ul>
+  <div class="section_background">
+  <h2 class="dashboard_h2">YOUR LISTINGS:</h2>
+    <% @current_user.devices.each do |b| %>
+      <div class="row user_dashboard_row">
+        <div class="col-xs-12">
+          <%= render "shared/dashboard_card_user", booking: b %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
+
+

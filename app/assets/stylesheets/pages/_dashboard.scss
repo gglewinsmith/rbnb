@@ -12,7 +12,7 @@
   text-shadow: 1px 1px 1px rgba(50,103,161,0.4);
   color: #18273C;
   font-size: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .dashboard_row {
   display: flex;
@@ -26,3 +26,13 @@
   padding: 0 130px;
   margin-bottom: 40px;
 }
+.user_dashboard_row {
+  border-top: 1px solid rgba(160,160,160,0.4);
+  border-bottom: 1px solid rgba(160,160,160,0.4);
+}
+.section_background {
+    background-color: white !important;
+    padding: 30px;
+}
+
+

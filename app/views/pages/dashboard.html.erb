@@ -4,7 +4,7 @@
   <h2 class="dashboard_h2">Devices you are borrowing:</h2>
   <div class="container">
     <div class="row">
-      <% @devices.each do |d| %>
+      <% @devices_booked.each do |d| %>
         <div class="col-xs-12">
           <%= render "shared/dashboard_card", device: d %>
         </div>
@@ -17,7 +17,7 @@
   <h2 class="dashboard_h2">Devices you are lending:</h2>
   <div class="container">
     <div class="row">
-      <% @devices.each do |d| %>
+      <% @devices_booked.each do |d| %>
         <div class="col-xs-12">
           <%= render "shared/dashboard_card", device: d %>
         </div>

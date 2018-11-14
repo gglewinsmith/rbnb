@@ -1,15 +1,14 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag 'rocket.png' %>
-  </a>
+
+  <%= link_to 'devici', root_path, class: "logo_styling" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <%= link_to 'Lend a Device', new_device_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to 'My Dashboard', dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
     <% else %>
       <%= link_to 'Lend a Device', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to 'Sign Up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>

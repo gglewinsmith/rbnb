@@ -22,8 +22,7 @@ class DevicesController < ApplicationController
 
   def create
     @device = Device.new(set_params)
-    @device.user = current_user
-    @device.user_id = @user.id
+    @device.user_id = current_user.id
     if @device.save
       redirect_to devices_path
     else

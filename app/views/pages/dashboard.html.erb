@@ -1,37 +1,34 @@
 <h1 class="dashboard_header">My Dashboard</h1>
 
-
-<div>
+<div class="borders">
   <h2 class="dashboard_h2">DEVICES YOU ARE BORROWING:</h2>
-  <div class="container">
-    <div class="dashboard_row">
-      <% @booked_devices.each do |b| %>
-        <div class="col-xs-4">
-          <%= render "shared/dashboard_card", booking: b %>
-        </div>
-      <% end %>
+  <div>
+    <div>
+      <div class="dashboard_row">
+        <% @booked_devices.each do |b| %>
+          <div class="col-xs-4">
+            <%= render "shared/dashboard_card", booking: b %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <br>
-    <p class="btn-medium" id="homepage-banner-button">
-      <%= link_to 'Borrow a new device', devices_path %>
-    </p>
   </div>
 </div>
 
-<div>
+<div id="break">
+</div>
+
+<div class="borders">
   <h2 class="dashboard_h2">DEVICES YOU ARE LENDING:</h2>
-  <div class="container">
-    <div class="dashboard_row">
-      <% @lent_devices.each do |b| %>
-        <div class="col-xs-12">
-          <%= render "shared/dashboard_card", booking: b %>
-        </div>
-      <% end %>
+  <div>
+    <div>
+      <div class="dashboard_row">
+        <% @lent_devices.each do |b| %>
+          <div class="col-xs-4">
+            <%= render "shared/dashboard_card", booking: b %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <br>
-      <p class="btn-medium" id="homepage-banner-button">
-        <%= link_to 'Lend a new device', new_device_path %>
-      </p>
-    </p>
   </div>
 </div>

@@ -3,22 +3,19 @@
     <h3 class="dashboard-name"><%= booking.device.name %></h3>
   </div>
   <div class="dashboard-body">
-    <p>Description:</p>
-    <br>
+    <p class="strong">Description:</p>
     <p><%= booking.device.description %></p>
   </div>
   <div class="dashboard-body">
-    <p>Rental Start Date:</p>
-    <br>
-    <p><%= booking.start_of_renting %></p>
+    <p class="strong">Rental Start Date:</p>
+    <p><%= booking.start_of_renting.to_s.split(' ')[0] %></p>
   </div>
   <div class="dashboard-body">
-  <p>Rental End Date:</p>
-    <br>
-    <p><%= booking.end_of_renting %></p>
+  <p class="strong">Rental End Date:</p>
+    <p><%= booking.end_of_renting.to_s.split(' ')[0] %></p>
   </div>
     <p class="btn-medium" id="dashboard-button">
-      <%= link_to 'More information on this device', devices_path %>
+      <%= link_to 'Link to my device', devices_path %>
     </p>
   </div>
 </div>

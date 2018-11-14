@@ -1,20 +1,27 @@
 .dashboard_header {
-  margin-left: 50px;
+  margin-left: 130px;
   font-size: 32px !important;
   font-weight: bold;
   margin-top: 80px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   color: #18273C;
 }
 .dashboard_h2{
-  margin-left: 50px;
-  font-style: italic;
+  // margin-left: 100px;
   font-weight: 900;
   text-shadow: 1px 1px 1px rgba(50,103,161,0.4);
   color: #18273C;
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 50px;
 }
 .dashboard_row {
   display: flex;
   border-bottom: 1px solid rgba(160,160,160,0.4);
+  border-top: 1px solid rgba(160,160,160,0.4);
+}
+#break {
+  margin-top: 100px;
+}
+.borders{
+  padding: 0 130px;
 }

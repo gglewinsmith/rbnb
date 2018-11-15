@@ -5,15 +5,15 @@ class DevicesController < ApplicationController
   def index
     if current_user && Device.all.any?
       @non_user_devices = Device.all.reject { |device| device.user == current_user }
-      @devices = @non_user_devices.reject { |device| device.booking_ids.present? == true }
+      @unbooked_devices = @non_user_devices.reject { |device| device.booking_ids.present? == true }
     else
       @devices = Device.all
     end
 
     if params[:query].present?
-      @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%")
+      @devices = @unbooked_devices.where("type_of_device ILIKE ?", "%#{params[:query]}%")
     else
-      @devices = Device.all
+      @devices = @unbooked_devices
     end
     @devices_position = Device.where.not(latitude: nil, longitude: nil)
 

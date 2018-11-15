@@ -11,7 +11,7 @@ class DevicesController < ApplicationController
     end
 
     if params[:query].present?
-      @devices_to_show = Device.where(type_of_device: params[:query])
+      @devices_to_show = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%")
     else
       @devices_to_show = Device.all
     end
@@ -40,7 +40,7 @@ class DevicesController < ApplicationController
     @device = Device.new(set_params)
     @device.user_id = current_user.id
     if @device.save
-      redirect_to devices_path
+      redirect_to dashboard_path
     else
       render :new
     end

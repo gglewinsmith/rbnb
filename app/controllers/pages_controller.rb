@@ -2,12 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, except: :homepage
 
   def homepage
-    @devices = Device.all.reject { |device| device.user == current_user }
-    if current_user
-      @devices = Device.all.reject { |device| device.user == current_user }
-    else
-      @devices = Device.all
-    end
+    @devices = Device.all.drop(3)
   end
 
   def dashboard

@@ -1,18 +1,24 @@
-<div class='form_for'>
-  <%= form_for(@device) do |f| %>
+<div class='form_for flex_box'>
+
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-sm-offset-3">
           <div class="form-group">
-            <%= f.text_field :name, placeholder: 'Which device do you need?', class: 'form-control' %>
+              <div class="search_form">
+                <div class="flex_box">
+                  <%= form_tag devices_path, class: "search_form", method: :get do %>
+                    <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: "What type of device do you need"%>
+                      <%= submit_tag "Search", :class => 'btn btn-danger' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <%= f.text_field :price_per_week, placeholder: 'What price did you have in mind?', class: 'form-control', name: "test" %>
-          </div>
-          <%= f.submit "Find device", class: 'btn-medium', id: 'homepage-banner-button' %>
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
 

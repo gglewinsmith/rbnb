@@ -3,6 +3,11 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    if params[:query].present?
+      @devices_to_show = Device.where(type_of_device: params[:query])
+    else
+      @devices_to_show = Device.all
+    end
     @devices = Device.where.not(latitude: nil, longitude: nil)
 
     @markers = @devices.map do |device|

@@ -3,13 +3,13 @@
   <div class="info-box">
     <div class="row">
       <div>
-        <h4 class="dashboard_h2 line-height">Information on <%= @device.name %>:</h4>
-        <ul class="line-height list-text">
-          <li>Type of device  |  <%= @device.type_of_device %></li>
-          <li>Condition  | <%= @device.condition_of_device %></li>
-          <li>Age (in years)  |  <%= @device.age_of_device %></li>
-          <li>Description  |  <%= @device.description %></li>
-          <li>Price per week  |  £<%=@device.price_per_week%></li>
+        <h4 class="show_name margins"><%= @device.name %></h4>
+        <h4 class="show_desciption margins">"<%= @device.description %>"</h4>
+        <ul class="line-height list-text margins">
+          <li><%= @device.type_of_device %></li>
+          <li>condition: <%= @device.condition_of_device %></li>
+          <li><%= @device.age_of_device %> years old</li>
+          <li>rentable at £<%=@device.price_per_week%> / week</li>
         </ul>
         <br>
         <%= cl_image_tag(@device.photo, width: 400, height: 225, crop: :pad) %>
@@ -20,12 +20,7 @@
     <% if user_signed_in? %>
     <%= render '/shared/booking_form', device: @device, booking: @booking %>
     <% else %>
-    <p class="btn-medium button_spacing" id="homepage-banner-button">
-      <%= link_to 'Sign In', new_user_session_path %>
-    </p>
-    <p class="btn-medium button_spacing_2" id="homepage-banner-button">
-      <%= link_to 'Create an Account', new_user_registration_path %>
-    </p>
+    <%= render '/shared/booking_signin' %>
     <% end %>
   </div>
 </div>

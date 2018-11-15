@@ -3,6 +3,6 @@
     <div class="card-category"><%= device.name %></div>
     <div class="card-description"><%= device.description %></div>
     <div class="card-condition">condition: <%= device.condition_of_device %></div>
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    <%= image_tag device.user.photo_url, class: "card-user" %>
   </div>
 <% end %>

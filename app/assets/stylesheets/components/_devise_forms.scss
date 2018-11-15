@@ -1,8 +1,31 @@
 .devise-form-box {
   background-color: white;
   width: 400px;
-  padding: 25px;
+  padding: 0 75px 20px 75px;
   margin-top: 40px !important;
   margin-bottom: 40px !important;
   margin:0 auto;
+}
+.devise-h2 {
+  font-size: 32px !important;
+  font-weight: bold;
+  color: #18273C;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  text-align: center;
+  text-shadow: 1.5px 1.5px 1.5px rgba(50, 103, 161, 0.4);
+  margin-top: 50px;
+}
+.shared-devise-links {
+  text-align: center;
+  color: black;
+  &:hover {
+    color: orange;
+    text-decoration: none;
+  }
+}
+.devise-footer-flex {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
 }

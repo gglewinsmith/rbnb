@@ -3,6 +3,8 @@
     <div class="card-category"><%= device.name %></div>
     <div class="card-description"><%= device.description %></div>
     <div class="card-condition">condition: <%= device.condition_of_device %></div>
-    <%= image_tag device.user.photo_url, class: "card-user" %>
+    <% unless device.user.photo_url.nil? %>
+      <%= image_tag device.user.photo_url, class: "card-user" %>
+    <% end %>
   </div>
 <% end %>

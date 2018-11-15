@@ -1,11 +1,7 @@
 <div class='form_for flex_box'>
 
     <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="form-group">
-              <div class="search_form">
-                <div class="flex_box">
+      <div class="row form-group search_form flex_box">
                   <%= form_tag devices_path, class: "search_form", method: :get do %>
                     <%= text_field_tag :query,
                       params[:query],
@@ -13,10 +9,6 @@
                       placeholder: "What type of device do you need"%>
                       <%= submit_tag "Search", :class => 'btn btn-danger' %>
                   <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

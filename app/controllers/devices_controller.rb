@@ -3,26 +3,34 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    if current_user
+      @non_user_devices = Device.all.reject { |device| device.user == current_user }
+      @non_user_devices.each do |non_user_device|
+        if non_user_device.booking_ids.present?
+          @devices = []
+          @devices << @non_user_devices.delete(non_user_device)
+        else
+          @devices = Device.all
+        end
+      end
+    else
+      @devices = Device.all
+    end
+
     if params[:query].present?
       @devices_to_show = Device.where(type_of_device: params[:query])
     else
       @devices_to_show = Device.all
     end
-    @devices = Device.where.not(latitude: nil, longitude: nil)
+    @devices_position = Device.where.not(latitude: nil, longitude: nil)
 
-    @markers = @devices.map do |device|
+    @markers = @devices_position.map do |device|
       {
         lng: device.longitude,
         lat: device.latitude,
         infoWindow: { content: render_to_string(partial: "/shared/map_window", locals: { device: device }) }
       }
     end
-    if current_user
-      @devices = Device.all.reject { |device| device.user == current_user }
-    else
-      @devices = Device.all
-    end
-    @device = Device.new
   end
 
   def show

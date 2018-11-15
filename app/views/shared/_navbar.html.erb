@@ -18,7 +18,9 @@
   <div class="navbar-wagon-right">
     <% if user_signed_in? %>
       <div class='sign-out'>
-        <%= current_user.email %>
+        <div class="navbar-wagon-link">
+          <%= current_user.email %>
+        </div>
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
       </div>
     <% else %>

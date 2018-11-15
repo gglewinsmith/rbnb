@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, except: :homepage
 
   def homepage
-    @devices = Device.all[-1..-3]
+    @devices = Device.all.last(3)
   end
 
   def dashboard

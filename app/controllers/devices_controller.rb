@@ -3,18 +3,10 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if current_user && Device.all.any?
-      @non_user_devices = Device.all.reject { |device| device.user == current_user }
-      @unbooked_devices = @non_user_devices.reject { |device| device.booking_ids.present? == true }
-    else
-      @devices = Device.all
-    end
+    params[:query].present? ? @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |d| d.booking_ids.present? } : @devices = Device.all.reject { |d| d.booking_ids.present? }
+    @devices = @devices.reject { |d| d.user == current_user } if current_user
+    @devices = [] if @devices.nil?
 
-    if params[:query].present?
-      @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |device| device.booking_ids.present? == true }
-    else
-      @devices = @unbooked_devices
-    end
     @devices_position = Device.where.not(latitude: nil, longitude: nil)
 
     @markers = @devices_position.map do |device|

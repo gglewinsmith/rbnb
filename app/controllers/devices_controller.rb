@@ -46,7 +46,7 @@ class DevicesController < ApplicationController
     @device = Device.new(set_params)
     @device.user_id = current_user.id
     if @device.save
-      redirect_to devices_path
+      redirect_to dashboard_path
     else
       render :new
     end

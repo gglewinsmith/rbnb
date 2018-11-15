@@ -11,7 +11,7 @@ class DevicesController < ApplicationController
     end
 
     if params[:query].present?
-      @devices = @unbooked_devices.where("type_of_device ILIKE ?", "%#{params[:query]}%")
+      @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |device| device.booking_ids.present? == true }
     else
       @devices = @unbooked_devices
     end
@@ -25,7 +25,6 @@ class DevicesController < ApplicationController
       }
     end
   end
-
 
   def show
     @booking = Booking.new

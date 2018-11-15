@@ -20,10 +20,9 @@
         <%= f.input :condition_of_device, label: "What condition is your device in (new/used)?", label_html: { class: "form_text" } %>
         <%= f.input :age_of_device, label: "How old is the device (in years)?", label_html: { class: "form_text" } %>
         <%= f.input :price_per_week, label: "How much is the device to rent per week?", label_html: { class: "form_text" } %>
-        <!-- [...] -->
+        <%= f.input :address, label: "Where is the device based?", label_html: { class: "form_text" } %>
         <%= f.input :photo, label: "Add a photo of your device", label_html: { class: "form_text" }  %>
         <%= f.input :photo_cache, as: :hidden %>
-        <!-- [...] -->
         <%= f.submit "Add your device", class: "btn-medium new_center_button"  %>
       <% end %>
     </div>

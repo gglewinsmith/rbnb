@@ -38,6 +38,15 @@
     </div>
   </div>
   <div>
+    <% if user_signed_in? %>
     <%= render '/shared/booking_form', device: @device, booking: @booking %>
+    <% else %>
+    <p class="btn-medium" id="homepage-banner-button">
+      <%= link_to 'Sign In', new_user_session_path %>
+    </p>
+    <p class="btn-medium" id="homepage-banner-button">
+      <%= link_to 'Create an Account', new_user_registration_path %>
+    </p>
+    <% end %>
   </div>
 </div>

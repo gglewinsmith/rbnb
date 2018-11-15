@@ -15,7 +15,7 @@
     <p><%= booking.end_of_renting.to_s.split(' ')[0] %></p>
   </div>
     <p class="btn-medium" id="dashboard-button">
-      <%= link_to 'Link to my device', devices_path %>
+      <%= link_to 'Link to the device', device_path(booking.device)%>
     </p>
   </div>
 </div>

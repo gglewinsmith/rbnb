@@ -1,23 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @device.photo, crop: :fill %>');">
-
-
-  <div class="banner-content">
-    <h1><%= @device.name %></h1>
-  </div>
-
 </div>
 <div class="flexbox">
   <div class="info-box">
     <div class="row">
       <div>
-        <h4>Information on Device</h4>
-        <ul>
-          <li>Type: <%= @device.type_of_device %></li>
-          <li>Condition: <%= @device.condition_of_device %></li>
-          <li>Age: <%= @device.age_of_device %></li>
-          <li>Description: <%= @device.description %></li>
-          <li>Price per week: £<%=@device.price_per_week%></li>
+        <h4 class="dashboard_h2 line-height">Information on <%= @device.name %>:</h4>
+        <ul class="line-height list-text">
+          <li>Type of device  |  <%= @device.type_of_device %></li>
+          <li>Condition  | <%= @device.condition_of_device %></li>
+          <li>Age (in years)  |  <%= @device.age_of_device %></li>
+          <li>Description  |  <%= @device.description %></li>
+          <li>Price per week  |  £<%=@device.price_per_week%></li>
         </ul>
+        <br>
+        <%= cl_image_tag(@device.photo, width: 400, height: 225, crop: :pad) %>
       </div>
     </div>
   </div>
@@ -25,10 +20,10 @@
     <% if user_signed_in? %>
     <%= render '/shared/booking_form', device: @device, booking: @booking %>
     <% else %>
-    <p class="btn-medium" id="homepage-banner-button">
+    <p class="btn-medium button_spacing" id="homepage-banner-button">
       <%= link_to 'Sign In', new_user_session_path %>
     </p>
-    <p class="btn-medium" id="homepage-banner-button">
+    <p class="btn-medium button_spacing_2" id="homepage-banner-button">
       <%= link_to 'Create an Account', new_user_registration_path %>
     </p>
     <% end %>

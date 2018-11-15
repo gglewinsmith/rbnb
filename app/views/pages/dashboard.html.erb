@@ -33,7 +33,7 @@
 <div class="borders">
   <div class="section_background">
   <h2 class="dashboard_h2">YOUR LISTINGS:</h2>
-    <% @current_user.devices.each do |b| %>
+    <% current_user.devices.each do |b| %>
       <div class="row user_dashboard_row">
         <div class="col-xs-12">
           <%= render "shared/dashboard_card_user", booking: b %>

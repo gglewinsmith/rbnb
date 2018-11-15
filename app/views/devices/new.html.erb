@@ -1,4 +1,4 @@
-  <h1 class="new_header">Loan your device</h1>
+<h1 class="new_header">Loan your device</h1>
 <div class="container">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <div class="form_background">
@@ -14,22 +14,17 @@
           </div>
         <% end %>
 
-        <%= f.input :name, label: "Enter name of device", label_html: { class: "form_text" } %>
-        <%= f.label :type_of_device, "What type of device is this?", class:"form_text" %>
-        <%= f.input :type_of_device %>
-        <%= f.label :description, "Describe your device", class:"form_text" %>
-        <%= f.input :description %>
-        <%= f.label :condition_of_device, "What condition is your device in?", class:"form_text" %>
-        <%= f.input :condition_of_device %>
-        <%= f.label :age_of_device, "How old is the device?", class:"form_text" %>
-        <%= f.input :age_of_device %>
-        <%= f.label :price_per_week, "How much is the device to rent per week?", class:"form_text" %>
-        <%= f.input :price_per_week %>
-        <%= f.label :address, "Where is the device based?", class:"form_text" %>
-        <%= f.input :address %>
-        <%= f.input :photo %>
+        <%= f.input :name, label: "Enter the name of your device", label_html: { class: "form_text" } %>
+        <%= f.input :type_of_device, label: "What type of device is this (laptop/phone/tablet)?", label_html: { class: "form_text" } %>
+        <%= f.input :description, label: "Describe your device (model, colour etc.)", label_html: { class: "form_text" } %>
+        <%= f.input :condition_of_device, label: "What condition is your device in (new/used)?", label_html: { class: "form_text" } %>
+        <%= f.input :age_of_device, label: "How old is the device (in years)?", label_html: { class: "form_text" } %>
+        <%= f.input :price_per_week, label: "How much is the device to rent per week?", label_html: { class: "form_text" } %>
+        <!-- [...] -->
+        <%= f.input :photo, label: "Add a photo of your device", label_html: { class: "form_text" }  %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit %>
+        <!-- [...] -->
+        <%= f.submit "Add your device", class: "btn-medium new_center_button"  %>
       <% end %>
     </div>
   </div>

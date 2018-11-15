@@ -31,11 +31,13 @@
 }
 .info-box {
   background-color: white;
-  height: 550px;
+  // height: 550px;
   width: 400px;
-  padding: 25px 25px 0 25px;
+  padding: 25px;
   margin-top: 40px;
   margin-left: 100px;
+  margin-left: 100px;
+  margin-bottom: 40px;
 }
 .booking {
   padding: 25px;
@@ -53,6 +55,7 @@
   margin-right: 100px;
   margin-bottom: 40px;
   border: 5px solid #1EA3A5;
+  box-shadow: 5px #333333;
 }
 .button_spacing {
   margin-top: 20px;

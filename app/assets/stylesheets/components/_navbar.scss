@@ -49,7 +49,6 @@
   color: #EA7610;
   text-decoration: none;
 }
-
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -79,4 +78,9 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+.sign-out {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

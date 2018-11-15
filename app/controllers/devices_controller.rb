@@ -3,18 +3,11 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if current_user
+    if current_user && Device.all.any?
       @non_user_devices = Device.all.reject { |device| device.user == current_user }
-      @non_user_devices.each do |non_user_device|
-        if non_user_device.booking_ids.present?
-          @devices = []
-          @devices << @non_user_devices.delete(non_user_device)
-        else
-          @devices = Device.all
-        end
-      end
+      @devices = @non_user_devices.reject { |device| device.booking_ids.present? == true }
     else
-      @devices = Device.all
+      @devices = Device.all?
     end
 
     if params[:query].present?
@@ -32,6 +25,7 @@ class DevicesController < ApplicationController
       }
     end
   end
+
 
   def show
     @booking = Booking.new

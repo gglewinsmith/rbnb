@@ -4,13 +4,13 @@
   <div class="section_background">
     <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY BORROWING:</h2>
     <div>
-      <div class="dashboard_row">
-        <% @booked_devices.each do |b| %>
+      <% @booked_devices.each do |b| %>
+        <div class="dashboard_row">
           <div class="col-xs-4">
             <%= render "shared/dashboard_card", booking: b %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

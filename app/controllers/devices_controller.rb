@@ -18,7 +18,7 @@ class DevicesController < ApplicationController
     end
 
     if params[:query].present?
-      @devices_to_show = Device.where(type_of_device: params[:query])
+      @devices_to_show = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%")
     else
       @devices_to_show = Device.all
     end

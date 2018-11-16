@@ -27,6 +27,11 @@ class DevicesController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/shared/map_window", locals: { device: device }) }
       }
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

@@ -9,7 +9,7 @@ class Device < ApplicationRecord
   validates :name, presence: true
   validates :price_per_week, presence: true
   validates :description, presence: true, length: { maximum: 140 }
-  validates :condition_of_device, presence: true
+  validates :condition_of_device, presence: true, inclusion: { in: ['Excellent', 'Very Good', 'Good', 'Used'] }>>>>>>> master
   validates :age_of_device, presence: true
   validates :type_of_device, presence: true
   validates :address, presence: true

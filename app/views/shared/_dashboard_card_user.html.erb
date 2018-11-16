@@ -7,5 +7,9 @@
   <p class="btn-medium" id="dashboard-button">
     <%= link_to 'Link to device', device_path(booking.id) %>
   </p>
+  <p class="btn-medium" id="dashboard-button">
+    <%= link_to "Delete", device_path(booking.id),
+      method: :delete %>
+  </p>
 </div>
 

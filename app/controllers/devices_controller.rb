@@ -1,6 +1,6 @@
 class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :destroy]
 
   def index
     params[:query].present? ? @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |d| d.booking_ids.present? } : @devices = Device.all.reject { |d| d.booking_ids.present? }
@@ -49,7 +49,7 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     @device.destroy
-    redirect_to devices_path
+    redirect_to dashboard_path
   end
 
   private

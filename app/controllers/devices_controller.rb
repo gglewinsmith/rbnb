@@ -7,7 +7,7 @@ class DevicesController < ApplicationController
     @devices = @devices.reject { |d| d.user == current_user } if current_user
     @devices = [] if @devices.nil?
 
-    @devices_position = Device.where.not(latitude: nil, longitude: nil)
+    @devices_position = Device.where.not(latitude: nil, longitude: nil).reject { |d| d.user == current_user }.reject { |d| d.booking_ids.present? }
 
     @markers = @devices_position.map do |device|
       {

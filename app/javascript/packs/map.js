@@ -10,7 +10,7 @@ if (mapElement) {
   mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/anguswatson16/cjohdxrj70ci32rljri8g149e'
+    style: 'mapbox://styles/anguswatson16/cjojwvnuo05vj2so3b3ufb3rw'
   });
 
   const markers = JSON.parse(mapElement.dataset.markers);

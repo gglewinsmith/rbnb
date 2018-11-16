@@ -3,30 +3,22 @@
 <div class="borders">
   <div class="section_background">
     <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY BORROWING:</h2>
-    <div>
-      <% @booked_devices.each do |b| %>
-        <div class="dashboard_row">
-          <div class="col-xs-4">
-            <%= render "shared/dashboard_card", booking: b %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <% @booked_devices.each do |b| %>
+      <div class="dashboard_row">
+        <%= render "shared/dashboard_card", booking: b %>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <div class="borders">
   <div class="section_background">
     <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY LENDING:</h2>
-    <div>
+    <% @lent_devices.each do |b| %>
       <div class="dashboard_row">
-        <% @lent_devices.each do |b| %>
-          <div class="col-xs-4">
-            <%= render "shared/dashboard_card", booking: b %>
-          </div>
-        <% end %>
+        <%= render "shared/dashboard_card", booking: b %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
@@ -34,13 +26,24 @@
   <div class="section_background">
   <h2 class="dashboard_h2">YOUR LISTINGS:</h2>
     <% current_user.devices.each do |b| %>
-      <div class="row user_dashboard_row">
-        <div class="col-xs-12">
-          <%= render "shared/dashboard_card_user", booking: b %>
-        </div>
+      <div class="user_dashboard_row">
+        <%= render "shared/dashboard_card_user", booking: b %>
       </div>
     <% end %>
   </div>
 </div>
 
 
+<!-- <div class="borders">
+  <div class="section_background">
+    <h2 class="dashboard_h2">DEVICES YOU ARE CURRENTLY BORROWING:</h2>
+    <% @booked_devices.each do |b| %>
+      <div class="dashboard_row">
+        <%= render "shared/dashboard_card", booking: b %>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+
+<!--           <div style="height: 50px; width: 50px; background-color: red"></div>
+ -->

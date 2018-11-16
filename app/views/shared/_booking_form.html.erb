@@ -1,5 +1,5 @@
 <div class="booking">
-  <h4 class="dashboard_h2">Booking form for this device:</h4>
+  <h4 class="show_name">Book this <%= @device.type_of_device  %></h4>
   <%= simple_form_for [device, booking] do |f| %>
   <%= f.input :start_of_renting, label: "When do you want to rent from?", label_html: { class: "form_text" } %>
   <%= f.input :end_of_renting, label: "When do you want to rent until?", label_html: { class: "form_text" } %>

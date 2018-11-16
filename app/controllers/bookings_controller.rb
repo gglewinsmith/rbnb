@@ -8,6 +8,12 @@ before_action :authenticate_user!
     (@booking.device.price_per_week / 7) * stay_length
   end
 
+  def new
+    @device = Device.find(params[:device_id])
+    @booking = Booking.new
+  end
+
+
   def create
     @booking = Booking.new(booking_params)
     @booking.device = Device.find(params[:device_id])

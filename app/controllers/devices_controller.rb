@@ -35,8 +35,9 @@ class DevicesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @booking = Booking.new(start_of_renting: Date.today, end_of_renting: Date.today + 7.days)
     set_device
+    calculate_total_price
   end
 
   def new
@@ -69,6 +70,9 @@ class DevicesController < ApplicationController
   end
 
   private
+  def calculate_total_price
+    @price = @device.price_per_week * ((@booking.end_of_renting - @booking.start_of_renting) / 7).floor
+  end
 
   def set_params
     params.require(:device).permit(:name, :price_per_week, :description, :condition_of_device, :age_of_device, :type_of_device, :address, :photo)

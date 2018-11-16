@@ -3,6 +3,7 @@
   <%= simple_form_for [device, booking] do |f| %>
   <%= f.input :start_of_renting, as: :string, label: "When do you want to rent from?", label_html: { class: "form_text" }, input_html: {class: "datepicker"} %>
   <%= f.input :end_of_renting, as: :string, label: "When do you want to rent until?", label_html: { class: "form_text" }, input_html: {class: "datepicker"} %>
+  <p>Total Price: £<span id="booking-total"><%= @price %></span></p>
   <%= f.submit "Create Booking", class: "btn-medium new_center_button"  %>
   <% end %>
 </div>

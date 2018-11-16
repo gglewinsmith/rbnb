@@ -33,13 +33,11 @@ if (mapElement) {
     });
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
-  // #if device corresponds to current user then do not display
-  // #if device is currently being borrowed then do not display
 
   markers.forEach((marker) => {
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setPopup(new mapboxgl.Popup({ offset: 25 })
       .setHTML(marker.infoWindow.content))
       .addTo(map);
   })

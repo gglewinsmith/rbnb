@@ -1,2 +1,5 @@
-<h1><%= device.name %></h1>
-<h2><%= device.address %></h2>
+<%= link_to device_path(device), id: 'popup_link' do %>
+  <h1><%= device.name %></h1>
+  <h2><%= device.address %></h2>
+  <h2>£<%= device.price_per_week %> p/w</h2>
+<% end %>

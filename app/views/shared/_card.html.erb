@@ -1,7 +1,7 @@
 <%= link_to device_path(device) do %>
-  <div class="card" style="background-image: linear-gradient(-100deg, rgba(200,200,200,0.6) 0%, rgba(100,100,100,0.6) 50%), url('<%= cl_image_path device.photo, height: 200, width: 300, crop: :fill if device.photo.present? %>');">
+  <div class="card" style="background-image: linear-gradient(-100deg, rgba(200,200,200,0.2) 0%, rgba(100,100,100,0.5) 50%), url('<%= cl_image_path device.photo, height: 200, width: 300, crop: :fill if device.photo.present? %>');">
     <div class="card-category"><%= device.name %></div>
-    <div class="card-description"><%= device.description %></div>
+    <div class="card-description"><%= truncate(device.description, length: 60)%></div>
     <div class="card-condition">condition: <%= device.condition_of_device %></div>
     <% unless device.user.photo_url.nil? %>
       <%= image_tag device.user.photo_url, class: "card-user" %>

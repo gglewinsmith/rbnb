@@ -73,9 +73,12 @@
   border-bottom: 1px solid rgba(160,160,160,0.4);
 }
 .show_name {
-  font-size: 28px;
-  line-height: 36px;
-  text-shadow: 1.5px 1.5px 1.5px rgba(50, 103, 161, 0.4);
+  font-size: 32px !important;
+  font-weight: bold;
+  color: #18273C;
+  text-shadow: 1px 1px 1px rgba(50, 103, 161, 0.4);
+  margin-bottom: none;
+  padding-bottom: 15px!important;
 }
 .show_desciption {
   font-size: 14px;

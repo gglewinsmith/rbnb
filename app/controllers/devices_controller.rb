@@ -3,7 +3,18 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :destroy]
 
   def index
-    params[:query].present? ? @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |d| d.booking_ids.present? } : @devices = Device.all.reject { |d| d.booking_ids.present? }
+    if params[:query].present?
+      sql_query = " \
+        devices.name ILIKE :query \
+        OR devices.description ILIKE :query \
+        OR devices.type_of_device ILIKE :query \
+      "
+      @devices = Device.where(sql_query, query: "%#{params[:query]}%")
+      # @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%")
+      @devices = @devices.reject { |d| d.booking_ids.present? }
+    else
+      @devices = Device.all.reject { |d| d.booking_ids.present? }
+    end
     @devices = @devices.reject { |d| d.user == current_user } if current_user
     @devices = [] if @devices.nil?
 

@@ -14,7 +14,8 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  width: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 .card-category {
@@ -26,13 +27,13 @@
 }
 .card-description {
   position: absolute;
-  bottom: 60px;
+  top: 85px;
   left: 10px;
-  font-size: 13px;
+  font-size: 10px;
 }
 .card-condition {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 10px;
   font-size: 13px;
 }

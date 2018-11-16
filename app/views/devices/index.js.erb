@@ -1,6 +1,15 @@
-console.log('hello')
-searchButton = document.GetElementById("search_button_id");
-searchButton.addEventListener("click", (event) => {
-  console.log(event);
-  console.log(event.currentTarget);
-})
+// console.log('hello')
+
+// function addDevice(deviceHTML) {
+//   const devices = document.getElementById('device');
+//   reviews.insertAdjacentHTML('beforeend', reviewHTML);
+// }
+
+// searchButton = document.getElementById("search_button_id");
+// searchButton.addEventListener("click", (event) => {
+//   location.reload();
+// })
+
+
+results = document.querySelector('.device-results')
+results.innerHTML = "<%= j render 'devices/device_results', devices: @devices %>"

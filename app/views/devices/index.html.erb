@@ -6,30 +6,14 @@
 </div>
 
 <div class="wrapper">
-  <div class="heading">
-    <h1><%= pluralize @devices.size, "result" %></h1>
-  </div>
-  <hr>
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row">
-          <% @devices.each do |device| %>
-            <div class="col-sm-6">
-              <%= render 'shared/card', device: device %>
-            </div>
-          <% end %>
+    <%= render 'devices/device_results', devices: @devices %>
+        <div class="col-sm-6">
+          <div
+            id="map"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div
-          id="map"
-          data-markers="<%= @markers.to_json %>"
-        ></div>
-      </div>
-    </div>
+
   </div>
 </div>
-
-
-

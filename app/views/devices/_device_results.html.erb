@@ -1,0 +1,15 @@
+<div class="device-results">
+  <div class="heading">
+    <h1><%= pluralize devices.size, "result" %></h1>
+  </div>
+  <hr>
+  <div class="col-sm-6">
+    <div class="row">
+      <% devices.each do |device| %>
+        <div class="col-sm-6">
+          <%= render 'shared/card', device: device %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

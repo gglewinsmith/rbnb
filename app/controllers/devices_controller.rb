@@ -3,6 +3,11 @@ class DevicesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :destroy]
 
   def index
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
     params[:query].present? ? @devices = Device.where("type_of_device ILIKE ?", "%#{params[:query]}%").reject { |d| d.booking_ids.present? } : @devices = Device.all.reject { |d| d.booking_ids.present? }
     @devices = @devices.reject { |d| d.user == current_user } if current_user
     @devices = [] if @devices.nil?
